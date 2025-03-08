@@ -3,7 +3,7 @@ import google.generativeai as genai  # Import Gemini API
 from time import sleep
 
 # Set Gemini API Key (Replace 'your-api-key' with a valid one)
-API_KEY = "AIzaSyCSJWoyPK3ZYOvfa1qUBph0A6G66wGPcOA"  # Replace with your actual API key
+API_KEY = "AIzaSyAFh7vzUDL5V9KZhcSJq4uxxhmCX2JQnnU"  # Replace with your actual API key
 
 genai.configure(api_key=API_KEY)
 
@@ -77,5 +77,5 @@ if st.button("📊 Analyze") and user_input:
 # Display Chat History
 st.markdown("### 💬 Chat History")
 for sender, message in chat_history:
-    with st.chat_message("assistant" if sender == "Fin Bot" else "user"):
-        st.markdown(f"<p style='font-size:16px;'><b>{sender}:</b> {message}</p>", unsafe_allow_html=True)
+    role = "🟢 **Fin Bot:**" if sender == "Fin Bot" else "🔵 **You:**"
+    st.markdown(f"{role} {message}")
